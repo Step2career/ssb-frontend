@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./src/styles/utils/variables";
+//@import "./src/styles/themes/light-theme";
+
+@font-face {
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-display: swap;
+    src: url(./assets/fonts/Playfair_Display/static/PlayfairDisplay-Regular.ttf) format('ttf');
+  }
+
+  *{
+    font-family: 'Playfair Display', serif;
+}

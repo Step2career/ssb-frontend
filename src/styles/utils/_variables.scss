@@ -1,0 +1,126 @@
+// _variables.scss
+:root {
+    --primary-color: #ffd700;
+    --secondary-color: #e74c3c;
+    --text-color: #e0e0e0;
+    --background-color: #1a1a1a;
+    --active-text: #ff6b6b;
+  }
+
+  // Colors
+$color-black: #000000;
+$color-gold-primary: #FFD700;
+$color-gold-secondary: #FFA500;
+$color-white: #ffffff;
+$color-text-primary: #ffffff;
+$color-text-secondary: #dddddd;
+$color-text-tertiary: #cccccc;
+$color-text-dark: #000000;
+
+// Gradients
+$gradient-bg-primary: linear-gradient(135deg, $color-black 0%, #1a1a1a 100%);
+$gradient-gold-primary: linear-gradient(45deg, $color-gold-primary, $color-gold-secondary);
+$gradient-gold-horizontal: linear-gradient(90deg, $color-gold-primary, $color-gold-secondary, $color-gold-primary);
+$gradient-text-gold: linear-gradient(45deg, $color-gold-primary, $color-gold-secondary, $color-gold-primary);
+
+// Backgrounds
+$bg-glass: rgba(255, 255, 255, 0.05);
+
+// Borders
+$border-gold-light: rgba(255, 215, 0, 0.2);
+$border-gold-medium: rgba(255, 215, 0, 0.4);
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+$spacing-3xl: 4rem;
+
+// Typography
+$font-family-primary: 'Arial', sans-serif;
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 2rem;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$line-height-relaxed: 1.6;
+
+// Shadows
+$box-shadow-gold: 0 10px 30px rgba(255, 215, 0, 0.4);
+$box-shadow-gold-hover: 0 20px 40px rgba(255, 215, 0, 0.2);
+$text-shadow-gold: 0 0 30px rgba(255, 215, 0, 0.3);
+
+// Sizes
+$container-max-width: 1200px;
+$step-number-size: 80px;
+$step-number-size-mobile: 60px;
+$icon-size: 60px;
+
+// Border radius
+$border-radius-sm: 0.375rem;
+$border-radius-md: 0.75rem;
+$border-radius-lg: 1.25rem;
+
+// Transitions
+$transition-duration-fast: 0.2s;
+$transition-duration-medium: 0.3s;
+$transition-duration-slow: 0.8s;
+$transition-easing: ease;
+
+// Breakpoints
+$breakpoint-tablet: 768px;
+$breakpoint-mobile: 480px;
+
+$spacing-4xl: 5rem;
+$font-size-4xl: 2.5rem;
+$benefit-icon-size: 60px;
+
+// Enhanced gradients
+$gradient-bg-secondary: linear-gradient(135deg, $color-black 0%, #1a1a1a 50%, #0a0a0a 100%);
+$gradient-text-gold-enhanced: linear-gradient(45deg, $color-gold-primary, $color-gold-secondary, #FFE55C, $color-gold-primary);
+$gradient-gold-radial: radial-gradient(circle, $color-gold-primary, $color-gold-secondary);
+
+// Enhanced backgrounds
+$bg-glass-enhanced: rgba(255, 255, 255, 0.08);
+$bg-glass-strong: rgba(255, 255, 255, 0.12);
+
+// Enhanced borders
+$border-gold-subtle: rgba(255, 215, 0, 0.15);
+$border-gold-bright: rgba(255, 215, 0, 0.6);
+
+// Enhanced shadows
+$text-shadow-gold-strong: 0 0 40px rgba(255, 215, 0, 0.4);
+$box-shadow-gold-intense: 0 25px 50px rgba(255, 215, 0, 0.3);
+
+// Category colors
+$color-service: #4ECDC4;
+$color-quality: #FF6B6B;
+$color-variety: #4DABF7;
+$color-gold-light: #FFF8DC;
+
+// Enhanced border radius
+$border-radius-xl: 1.5rem;
+
+// Enhanced transitions
+$transition-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+$gradient-bg-testimonials: linear-gradient(135deg, #000000 0%, #1a1a1a 30%, #0f0f0f 100%);
+$gradient-text-testimonials: linear-gradient(45deg, #FFD700, #FFA500, #FFE55C, #FFD700);
+$text-shadow-testimonials: 0 0 50px rgba(255, 215, 0, 0.5);
+
+$bg-stats: rgba(255, 255, 255, 0.06);
+$bg-featured-testimonial: rgba(255, 255, 255, 0.1);
+$bg-testimonial-card: rgba(255, 255, 255, 0.05);
+$bg-cta-testimonial: rgba(255, 255, 255, 0.08);
+
+$box-shadow-testimonial-hover: 0 15px 35px rgba(255, 215, 0, 0.2);

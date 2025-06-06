@@ -1,0 +1,306 @@
+@import '../../../../styles/utils/variables';
+@import '../../../../styles/utils/mixins.scss';
+
+.what-do-i-get-container {
+  font-family: $font-family-primary;
+  background: $gradient-bg-secondary;
+  color: $color-text-primary;
+  min-height: 100vh;
+  padding: $spacing-3xl $spacing-md;
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-particles {
+  @include floating-particles-bg;
+}
+
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-4xl;
+
+  .section-title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    background: $gradient-text-gold-enhanced;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: $spacing-lg;
+    text-shadow: $text-shadow-gold-strong;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: $gradient-gold-primary;
+      border-radius: 2px;
+    }
+    
+    @include respond-to(tablet) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  .section-subtitle {
+    font-size: $font-size-lg;
+    color: $color-text-secondary;
+    font-weight: $font-weight-light;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: $line-height-relaxed;
+  }
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: $spacing-xl;
+  margin-bottom: $spacing-4xl;
+
+  @include respond-to(tablet) {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+}
+
+.benefit-card {
+  background: $bg-glass-enhanced;
+  backdrop-filter: blur(15px);
+  border: 1px solid $border-gold-subtle;
+  border-radius: $border-radius-xl;
+  padding: $spacing-xl;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all $transition-duration-slow $transition-easing-bounce;
+  cursor: pointer;
+
+  &--visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  &--hovered {
+    transform: translateY(-8px) scale(1.02);
+    border-color: $border-gold-bright;
+    box-shadow: $box-shadow-gold-intense;
+  }
+
+  &--service {
+    border-left: 4px solid $color-service;
+  }
+
+  &--quality {
+    border-left: 4px solid $color-quality;
+  }
+
+  &--variety {
+    border-left: 4px solid $color-variety;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__icon-wrapper {
+    position: relative;
+    width: $benefit-icon-size;
+    height: $benefit-icon-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon {
+    font-size: $font-size-2xl;
+    z-index: 2;
+    position: relative;
+    transition: transform $transition-duration-medium $transition-easing;
+  }
+
+  &__icon-bg {
+    position: absolute;
+    inset: 0;
+    background: $gradient-gold-radial;
+    border-radius: 50%;
+    opacity: 0.2;
+    transition: all $transition-duration-medium $transition-easing;
+  }
+
+  &:hover &__icon {
+    transform: scale(1.2) rotate(10deg);
+  }
+
+  &:hover &__icon-bg {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-gold-primary;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__description {
+    font-size: $font-size-base;
+    line-height: $line-height-relaxed;
+    color: $color-text-secondary;
+    margin-bottom: $spacing-lg;
+  }
+
+  &__features {
+    margin-top: $spacing-lg;
+  }
+
+  &__glow {
+    position: absolute;
+    inset: 0;
+    background: $gradient-gold-radial;
+    opacity: 0;
+    transition: opacity $transition-duration-slow $transition-easing;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &:hover &__glow {
+    opacity: 0.05;
+  }
+
+  @include respond-to(tablet) {
+    padding: $spacing-lg;
+  }
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: $spacing-sm;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: $font-size-sm;
+    color: $color-text-tertiary;
+    padding: $spacing-xs $spacing-sm;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: $border-radius-sm;
+    transition: all $transition-duration-fast $transition-easing;
+
+    &:hover {
+      background: rgba(255, 215, 0, 0.2);
+      color: $color-gold-light;
+    }
+  }
+
+  &__icon {
+    font-size: 0.75rem;
+    color: $color-gold-primary;
+  }
+}
+
+.cta-section {
+  background: $bg-glass-strong;
+  backdrop-filter: blur(20px);
+  border: 2px solid $border-gold-medium;
+  border-radius: $border-radius-xl;
+  padding: $spacing-2xl;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: $gradient-gold-horizontal;
+  }
+}
+
+.cta-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-gold-primary;
+  margin-bottom: $spacing-md;
+}
+
+.cta-description {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-xl;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background: $gradient-gold-primary;
+  color: $color-text-dark;
+  border: none;
+  border-radius: $border-radius-lg;
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  transition: all $transition-duration-medium $transition-easing;
+  box-shadow: $box-shadow-gold;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $box-shadow-gold-intense;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &__text {
+    position: relative;
+  }
+
+  &__icon {
+    font-size: $font-size-xl;
+    transition: transform $transition-duration-fast $transition-easing;
+  }
+
+  &:hover &__icon {
+    transform: translateX(5px);
+  }
+}

@@ -1,0 +1,27 @@
+<!-- navbar.component.html -->
+<nav class="navbar">
+  <div class="nav-container">
+    <!-- Logo/Brand -->
+    <div class="nav-brand">
+      <a href="/" class="brand-link">
+        <img src="../assets/logo.jpeg" alt="ssb logo">
+        <!-- <span class="brand-text">Bella</span> -->
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      <a href="/accessories" class="nav-link">Place Order</a>
+      <a href="/new-arrivals" class="nav-link">New Designs</a>
+      <a href="/dresses" class="nav-link">Rental Services</a>
+      <a href="/sale" class="nav-link sale-link">About Us</a>
+    </div>
+    
+    <!-- Mobile menu toggle -->
+    <button class="mobile-toggle" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span class="hamburger-line" [class.active]="isMenuOpen"></span>
+      <span class="hamburger-line" [class.active]="isMenuOpen"></span>
+      <span class="hamburger-line" [class.active]="isMenuOpen"></span>
+    </button>
+  </div>
+</nav>

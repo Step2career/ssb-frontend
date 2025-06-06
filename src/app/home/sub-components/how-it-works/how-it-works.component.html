@@ -1,0 +1,30 @@
+<div class="how-it-works-container">
+  <div class="floating-elements"></div>
+  
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-subtitle">Your journey to perfect fashion, simplified in 4 easy steps</p>
+    </header>
+
+    <div class="flowchart">
+      <div 
+        #stepElement
+        *ngFor="let step of steps; trackBy: trackByStepId" 
+        class="step"
+        [class.step--even]="step.id % 2 === 0"
+        [class.step--visible]="isStepVisible(step.id)"
+        [attr.data-step-id]="step.id"
+        [style.animation-delay.s]="step.id * 0.2">
+        
+        <div class="step__number">{{ step.id }}</div>
+        
+        <div class="step__content">
+          <div class="step__icon" [innerHTML]="step.icon"></div>
+          <h3 class="step__title">{{ step.title }}</h3>
+          <p class="step__description">{{ step.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<section class="testimonials-section" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <div class="container">
+    <!-- Header with Logo -->
+    <div class="section-header">
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Discover why women love shopping with us</p>
+    </div>
+
+    <!-- Testimonials Carousel -->
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="testimonials-grid" [style.transform]="'translateX(-' + (currentSlide * 100) + '%)'">
+          <div class="slide" *ngFor="let slideGroup of slides; let slideIndex = index">
+            <div class="testimonial-cards">
+              <div class="testimonial-card" *ngFor="let testimonial of slideGroup">
+                <div class="card-content">
+                  <div class="customer-image">
+                    <img [src]="testimonial.image" [alt]="testimonial.name" />
+                    <div class="image-overlay"></div>
+                  </div>
+                  
+                  <div class="testimonial-body">
+                    <div class="quote-icon">❝</div>
+                    <blockquote class="customer-quote">
+                      {{ testimonial.quote }}
+                    </blockquote>
+                    
+                    <div class="rating">
+                      <span class="star" 
+                            *ngFor="let filled of getStars(testimonial.rating)" 
+                            [class.filled]="filled">
+                        ★
+                      </span>
+                    </div>
+                    
+                    <div class="customer-info">
+                      <h4 class="customer-name">{{ testimonial.name }}</h4>
+                      <p class="customer-location">{{ testimonial.location }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button class="nav-btn prev-btn" (click)="prevSlide()" aria-label="Previous testimonials">
+        <span>‹</span>
+      </button>
+      <button class="nav-btn next-btn" (click)="nextSlide()" aria-label="Next testimonials">
+        <span>›</span>
+      </button>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="pagination">
+      <button 
+        class="dot" 
+        *ngFor="let dot of slides; let i = index"
+        [class.active]="i === currentSlide"
+        (click)="goToSlide(i)"
+        [attr.aria-label]="'Go to slide ' + (i + 1)">
+      </button>
+    </div>
+  </div>
+</section>

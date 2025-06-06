@@ -1,0 +1,59 @@
+<section class="what-do-i-get-container">
+  <div class="floating-particles"></div>
+  
+  <div class="container">
+    <header class="section-header">
+      <h2 class="section-title">What Do I Get?</h2>
+      <p class="section-subtitle">Discover the premium benefits and services that make us your perfect fashion partner</p>
+    </header>
+
+    <div class="benefits-grid">
+      <div 
+        #benefitElement
+        *ngFor="let benefit of benefits; trackBy: trackByBenefitId" 
+        class="benefit-card"
+        [class]="getCategoryClass(benefit.category)"
+        [class.benefit-card--visible]="isBenefitVisible(benefit.id)"
+        [class.benefit-card--hovered]="hoveredBenefit === benefit.id"
+        [attr.data-benefit-id]="benefit.id"
+        [style.animation-delay.s]="benefit.id * 0.15"
+        (mouseenter)="onBenefitHover(benefit.id)"
+        (mouseleave)="onBenefitLeave()">
+        
+        <div class="benefit-card__header">
+          <div class="benefit-card__icon-wrapper">
+            <span class="benefit-card__icon" [innerHTML]="benefit.icon"></span>
+            <div class="benefit-card__icon-bg"></div>
+          </div>
+          <h3 class="benefit-card__title">{{ benefit.title }}</h3>
+        </div>
+        
+        <div class="benefit-card__content">
+          <p class="benefit-card__description">{{ benefit.description }}</p>
+          
+          <div *ngIf="benefit.features" class="benefit-card__features">
+            <ul class="features-list">
+              <li *ngFor="let feature of benefit.features" class="features-list__item">
+                <span class="features-list__icon">✨</span>
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="benefit-card__glow"></div>
+      </div>
+    </div>
+
+    <div class="cta-section">
+      <div class="cta-content">
+        <h3 class="cta-title">Ready to Experience Premium Fashion?</h3>
+        <p class="cta-description">Join thousands of satisfied customers who trust us with their style needs</p>
+        <button class="cta-button">
+          <span class="cta-button__text">Get Started Today</span>
+          <span class="cta-button__icon">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
